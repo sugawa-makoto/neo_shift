@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/create_dates_table', 'DateController@create_dates_table');
-
-
+Route::get('/times_setting_form', 'TimeController@times_setting_form');
+Route::post('/times_setting_form', 'TimeController@times_setting_form_post');
 
 
 
