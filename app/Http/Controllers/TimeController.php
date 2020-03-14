@@ -9,7 +9,7 @@ class TimeController extends Controller
 {
     public function times_setting_form(){
 
-        return view('/time');
+        return view('time');
   }
   public function times_setting_form_post(Request $request){
 
@@ -31,7 +31,7 @@ class TimeController extends Controller
         $record->length = $request->length;
         $record->interval= $request->interval;
         $record->save();
-
+        return view('time');
         // 二重送信対策
         $request->session()->regenerateToken();
     }
