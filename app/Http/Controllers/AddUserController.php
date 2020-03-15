@@ -11,6 +11,6 @@ class AddUserController extends Controller
     public function user_add_form(){
         $times_data = Time::all();
 
-        return view('adduser_form', ['times_data' => $times_data]);
+        return view('', ['times_data' => $times_data]);
   }
 }

@@ -15,14 +15,7 @@ class AddColumnToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('gender');
-            $table->string('birthday');
-            $table->string('emergency_tel');
-            $table->integer('company_id');
-            $table->integer('youbi_id');
-            $table->integer('time_id');
-            $table->integer('midnight');
-            $table->string('continuous_midnight');
-            $table->integer('week_remaining_time');
+            $table->integer('age');
         });
     }
 

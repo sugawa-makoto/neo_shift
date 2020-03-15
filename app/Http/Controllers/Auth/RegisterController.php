@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Time;
 
 class RegisterController extends Controller
 {
@@ -38,7 +39,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth'); //元は $this->middleware('guest');
+        // $this->middleware('auth'); //元は $this->middleware('guest');
+        $this->middleware('guest');
     }
 
     /**
@@ -51,7 +53,13 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'shift1' => ['required', 'string'],
+            'shift2' => ['required', 'string'],
+            'shift3' => ['required', 'string'],
+            'shift4' => ['required', 'string'],
+            'shift5' => ['required', 'string'],
+            'midnight' => ['required', 'string'],
+            'continuous_midnight' => ['required', 'string'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -66,8 +74,19 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'shift1' => $data['shift1'],
+            'shift2' => $data['shift2'],
+            'shift3' => $data['shift3'],
+            'shift4' => $data['shift4'],
+            'shift5' => $data['shift5'],
+            'midnight' => $data['midnight'],
+            'continuous_midnight' => $data['continuous_midnight'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function showRegistrationForm(){
+        $times_data = Time::all();
+
+        return view('auth.register', ['times_data' => $times_data]);
     }
 }

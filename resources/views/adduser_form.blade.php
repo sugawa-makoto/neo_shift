@@ -228,6 +228,7 @@
 
     //各従業員別に勤務日には赤い丸などを出したい
     //タップしてOKボタンを押すと休み希望が取れる
+    //休み希望の取り消しもできる
     <!-- 試作カレンダー -->
     <button id="prev" type="button">前の月</button>
     <button id="next" type="button">次の月</button>
@@ -325,14 +326,15 @@
             showCalendar(year, month)
         }
 
+
         document.querySelector('#prev').addEventListener('click', moveCalendar)
         document.querySelector('#next').addEventListener('click', moveCalendar)
 
         document.addEventListener("click", function(e) {
-            if(e.target.classList.contains("calendar_td")) {
 
+            if(e.target.classList.contains("calendar_td")) {
+                
                 alert('クリックした日付は' + e.target.dataset.date + 'です')
-                document.getElementById('calendar_td').style.background='pink';
             }
         });
 
