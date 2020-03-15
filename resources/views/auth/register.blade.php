@@ -25,7 +25,7 @@
                             </div>
                         </div>
 
-                        {{-- <!-- 曜日指定ラジオボタン -->
+                        <!-- 曜日指定ラジオボタン -->
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">曜日選択</label>
                             <div class="col-md-8">
@@ -42,7 +42,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div> --}}
+                        </div>
 
                         <!-- シフト選択1 -->
                         <div class="form-group row">

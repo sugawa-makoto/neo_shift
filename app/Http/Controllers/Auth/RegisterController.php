@@ -53,6 +53,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'youbi[]' => ['required', 'string', 'max:255'],
             'shift1' => ['required', 'string'],
             'shift2' => ['required', 'string'],
             'shift3' => ['required', 'string'],
@@ -74,6 +75,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'youbi[]' => $data['youbi[]'],
             'shift1' => $data['shift1'],
             'shift2' => $data['shift2'],
             'shift3' => $data['shift3'],
