@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">従業員登録</div>
+                {{-- <div class="card-header">従業員登録</div> --}}
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -25,24 +26,29 @@
                             </div>
                         </div>
 
-                        <!-- 曜日指定ラジオボタン -->
+                        <!-- 曜日指定checkボックス -->
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">曜日選択</label>
-                            <div class="col-md-8">
-                                <input type="checkbox" name="youbi[]" value="月曜日"> 月曜日
-                                <input type="checkbox" name="youbi[]" value="火曜日"> 火曜日
-                                <input type="checkbox" name="youbi[]" value="水曜日"> 水曜日
-                                <input type="checkbox" name="youbi[]" value="木曜日"> 木曜日
-                                <input type="checkbox" name="youbi[]" value="金曜日"> 金曜日
-                                <input type="checkbox" name="youbi[]" value="土曜日"> 土曜日
-                                <input type="checkbox" name="youbi[]" value="日曜日"> 日曜日
-                                @if ($errors->has('youbi[]'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('youbi[]') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="col-md-8 youbi">
+                                <input type="hidden" name="monday" value="off">
+                                <input type="checkbox" name="monday"> 月曜日
+                                <input type="hidden" name="tuesday" value="off">
+                                <input type="checkbox" name="tuesday"> 火曜日
+                                <input type="hidden" name="wednesday" value="off">
+                                <input type="checkbox" name="wednesday"> 水曜日
+                                <input type="hidden" name="thursday" value="off">
+                                <input type="checkbox" name="thursday"> 木曜日
+                                <br>
+                                <input type="hidden" name="friday" value="off">
+                                <input type="checkbox" name="friday"> 金曜日
+                                <input type="hidden" name="satday" value="off">
+                                <input type="checkbox" name="satday"> 土曜日
+                                <input type="hidden" name="sunday" value="off">
+                                <input type="checkbox" name="sunday"> 日曜日
+
                             </div>
                         </div>
+
 
                         <!-- シフト選択1 -->
                         <div class="form-group row">
@@ -190,7 +196,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary send">
                                     登録
                                 </button>
                             </div>
@@ -204,17 +210,18 @@
 @endsection
 
 @section('script')
+{{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script>
+var number;
 $(function(){
-  var nowchecked = $('input[name=xxxx]:checked').val();
-  $('input[name=xxxx]').click(function(){
-    if($(this).val() == nowchecked) {
-      $(this).prop('checked', false);
-      nowchecked = false;
-    } else {
-      nowchecked = $(this).val();
-    }
-  });
+    $('input').click(function(){
+        if($(this).val() == number) {
+            $(this).prop('checked', false);
+            number = 0;
+        } else {
+            number = $(this).val();
+        }
+    });
 });
-</script>
+</script> --}}
 @endsection

@@ -7,117 +7,129 @@
     <title>times_table_create</title>
 </head>
 <body>
-
+<div class="shift_cleate">
     <form method="post" action="/times_setting_form" enctype="multipart/form-data">
         {{ csrf_field() }}
     <!-- シフト名追加 -->
-    <div class="shift_name">
+    <div class="shift_name flex_column">
         <label>シフト名</label>
         <input type="text" name="shift_name" placeholder="必須項目">
     </div>
     <!-- 勤務開始時間追加 -->
     <div class="start_time">
         <label>勤務開始時間</label>
-        <select class="start_time_select" id="start_time" name="start_time">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8" selected>8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-        </select>時
+        <div class="start_time_select_wrapper">
+            <select class="start_time_select" id="start_time" name="start_time">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8" selected>8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+            </select>時
+        </div>
     </div>
     <!-- 勤務終了時間追加 -->
     <div class="end_time">
         <label>勤務終了時間</label>
-        <select class="end_time_select" id="end_time" name="end_time">
-            <option value="24">翌0</option>
-            <option value="25">翌1</option>
-            <option value="26">翌2</option>
-            <option value="27">翌3</option>
-            <option value="28">翌4</option>
-            <option value="29">翌5</option>
-            <option value="30">翌6</option>
-            <option value="31">翌7</option>
-            <option value="32">翌8</option>
-            <option value="33">翌9</option>
-            <option value="34">翌10</option>
-            <option value="35">翌11</option>
-            <option value="36">翌12</option>
-            <option value="0" selected>0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-        </select>時
+        <div class="end_time_select_wrapper">
+            <select class="end_time_select" id="end_time" name="end_time">
+                <option value="24">翌0</option>
+                <option value="25">翌1</option>
+                <option value="26">翌2</option>
+                <option value="27">翌3</option>
+                <option value="28">翌4</option>
+                <option value="29">翌5</option>
+                <option value="30">翌6</option>
+                <option value="31">翌7</option>
+                <option value="32">翌8</option>
+                <option value="33">翌9</option>
+                <option value="34">翌10</option>
+                <option value="35">翌11</option>
+                <option value="36">翌12</option>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+            </select>時
+        </div>
     </div>
     <!-- 休憩時間追加 -->
     <div class="break_time">
         <label>休憩時間</label>
-        <select class="break_time_select" id="break_time" name="break_time">
-            <option value="0.25">15</option>
-            <option value="0.5">30</option>
-            <option value="0.75">45</option>
-            <option value="1" selected>60</option>
-            <option value="0">0</option>
-        </select>分
+        <div class="break_time_select_wrapper">
+            <select class="break_time_select" id="break_time" name="break_time">
+                <option value="0.25">15</option>
+                <option value="0.5">30</option>
+                <option value="0.75">45</option>
+                <option value="1" selected>60</option>
+                <option value="0">0</option>
+            </select>分
+        </div>
     </div>
-    <div class="calculation_work_time">
+    <div class="calculation_work_time flex_column">
         <button id="button">労働時間計算</button>
         <input type="text" name="length" placeholder="" id="work_time">
     </div>
     <!-- シフト間インターバル時間追加 -->
     <div class="interval_time">
         <label>シフト間インターバル時間</label>
-        <select class="interval_time_select" id="interval_time" name="interval">
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14" selected>14</option>
-        </select>時間
+        <div class="interval_time_select_wrapper">
+            <select class="interval_time_select" id="interval_time" name="interval">
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14" selected>14</option>
+            </select>時間
+        </div>
     </div>
+
     <!-- 送信 -->
-    <p><input type="submit" value="送信する"></p>
+    <p><input type="submit" value="送信する" class="send"></p>
+    </form>
+</div>
+
     <!-- スクリプト -->
     <script>
         // 要素を取得

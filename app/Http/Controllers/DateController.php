@@ -16,13 +16,13 @@ class DateController extends Controller
         $day = 25;
         $dt = Carbon::createFromDate($year, $month, $day); // 2018-08-04 09:11:23
 
-        //carbon展開
+        //今月の日数を求めるプロセス
         $now_year = $carbon->year; //今年
         $now_month = $carbon->month; //今月
         $next_month =  $now_month+1;// 来月
         $several_days = $carbon->daysInMonth;//今月の日数
         $next_dt = $next_month;
-        
+
         //来月の日数を求めるプロセス
         $create_year = $now_year;
         $create_month = $next_month;
@@ -43,7 +43,7 @@ class DateController extends Controller
         if (empty($exists_dates_now_month)){
             $days = [];
             for ($i=1; $i <= $several_days; $i++) {
-                
+
                 $carbon_date = Carbon::parse("$now_year-$now_month-$i");
                 // 以下で日本語ロケールをセットしています。
                 setlocale(LC_ALL, 'ja_JP.UTF-8');
@@ -68,5 +68,27 @@ class DateController extends Controller
             }
             Date::insert($next_days);
         }
+    }
+    //今年を求める関数
+    public function now_year() {
+        $carbon = Carbon::now();
+        $now_year = $carbon->year; //今年
+
+        $next_month_init = $carbon->addMonth(); //来月定義
+        // $next_month = $next_month_init->month; //来月表示
+        return $now_year;
+    }
+    //今月を求める関数
+    public function now_month() {
+        $carbon = Carbon::now();
+        $now_month = $carbon->month;
+        return $now_month;
+    }
+    //来月を求める関数
+    public function next_month() {
+        $carbon = Carbon::now();
+        $next_month_init = $carbon->addMonth(); //来月定義
+        $next_month = $next_month_init->month; //来月表示
+        return $next_month;
     }
 }

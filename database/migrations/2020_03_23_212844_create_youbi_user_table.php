@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateYoubisTable extends Migration
+class CreateYoubiUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,15 @@ class CreateYoubisTable extends Migration
      */
     public function up()
     {
-        Schema::create('youbis', function (Blueprint $table) {
+        Schema::create('youbi_user', function (Blueprint $table) {
             $table->id();
-            $table->integer('number');
-            $table->string('name');
+            $table->date('day');
+            $table->integer('year');
+            $table->integer('month');
+            $table->integer('youbi_id');
+            $table->string('youbi_name');
+            $table->integer('user_id');
+            $table->string('user_name');
             $table->timestamps();
         });
     }
@@ -28,6 +33,6 @@ class CreateYoubisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('youbis');
+        Schema::dropIfExists('youbi_user');
     }
 }

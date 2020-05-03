@@ -51,9 +51,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'youbi[]' => ['required', 'string', 'max:255'],
+            'name' => ['string', 'max:255'],
+            'monday' => ['required', 'max:255'],
+            'tuesday' => ['required', 'max:255'],
+            'wednesday' => ['required', 'max:255'],
+            'thursday' => ['required', 'max:255'],
+            'friday' => ['required', 'max:255'],
+            'satday' => ['required', 'max:255'],
+            'sunday' => ['required', 'max:255'],
             'shift1' => ['required', 'string'],
             'shift2' => ['required', 'string'],
             'shift3' => ['required', 'string'],
@@ -73,9 +80,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+
         return User::create([
             'name' => $data['name'],
-            'youbi[]' => $data['youbi[]'],
+            'monday' => $data['monday'] === "on",
+            'tuesday' => $data['tuesday'] === "on",
+            'wednesday' => $data['wednesday'] === "on",
+            'thursday' => $data['thursday'] === "on",
+            'friday' => $data['friday'] === "on",
+            'satday' => $data['satday'] === "on",
+            'sunday' => $data['sunday'] === "on",
             'shift1' => $data['shift1'],
             'shift2' => $data['shift2'],
             'shift3' => $data['shift3'],
@@ -85,6 +100,7 @@ class RegisterController extends Controller
             'continuous_midnight' => $data['continuous_midnight'],
             'password' => Hash::make($data['password']),
         ]);
+
     }
     public function showRegistrationForm(){
         $times_data = Time::all();

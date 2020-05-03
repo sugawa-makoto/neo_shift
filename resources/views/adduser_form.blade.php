@@ -141,13 +141,13 @@
     <!-- 曜日指定ラジオボタン -->
     <div class="youbi">
         <label>曜日選択</label>
-        <input type="checkbox" name="mon" value="月曜日"> 月曜日
-        <input type="checkbox" name="tue" value="火曜日"> 火曜日
-        <input type="checkbox" name="wed" value="水曜日"> 水曜日
-        <input type="checkbox" name="thu" value="木曜日"> 木曜日
-        <input type="checkbox" name="fri" value="金曜日"> 金曜日
-        <input type="checkbox" name="sat" value="土曜日"> 土曜日
-        <input type="checkbox" name="sun" value="日曜日"> 日曜日
+        <input type="radio" name="mon" value="月曜日"> 月曜日
+        <input type="radio" name="tue" value="火曜日"> 火曜日
+        <input type="radio" name="wed" value="水曜日"> 水曜日
+        <input type="radio" name="thu" value="木曜日"> 木曜日
+        <input type="radio" name="fri" value="金曜日"> 金曜日
+        <input type="radio" name="sat" value="土曜日"> 土曜日
+        <input type="radio" name="sun" value="日曜日"> 日曜日
     </div>
     <!-- 管理者が用意したシフト選択 -->
     <div class="midnight">
@@ -333,7 +333,7 @@
         document.addEventListener("click", function(e) {
 
             if(e.target.classList.contains("calendar_td")) {
-                
+
                 alert('クリックした日付は' + e.target.dataset.date + 'です')
             }
         });
@@ -366,5 +366,6 @@
             work_time.value = result;
         });
     </script>
+
 </body>
 </html>

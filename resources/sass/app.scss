@@ -4,5 +4,486 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// // Bootstrap
+// @import '~bootstrap/scss/bootstrap';
+// ******************************<レスポンシブサイズ設定start>******************************
+$pc: 1024px; // PC
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+html {
+    background:#17E7CF;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+// ******************************<レスポンシブサイズ設定end>******************************
+
+// ******************************<SPのレイアウトstart>******************************
+@include sp{
+    body {
+        padding:1rem;
+    }
+    // ******************************[会社設定画面]******************************
+    .company_setting {
+        input {
+            border-radius: .3rem;
+            height: 2rem;
+        }
+        .flex_column {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+        }
+        .admin_section {
+            padding:2rem 2rem 2rem 2rem;
+            margin-top: 2rem;
+            border-top: solid .5px rgba(245, 245, 245, 1);
+        }
+        .placeholder {
+            font-size: 10px;
+            color: black;
+        }
+        .send {
+            display       : inline-block;
+            font-size     : 18pt;
+            text-align    : center;
+            cursor        : pointer;
+            padding       : 12px 12px;
+            background    : #007B76;
+            color         : #ffffff;
+            line-height   : 1em;
+            transition    : .3s;
+            box-shadow    : 6px 6px 15px #666666;
+            border        : 2px solid #007B76;
+            border-radius: 0;
+            width: 100%;
+            margin-top:1rem;
+            width: 100%;
+            padding-top:.5rem;
+            padding-bottom:.5rem;
+            height: 3rem;
+          }
+          .send:hover {
+            box-shadow    : none;
+            color         : #007B76;
+            background    : #ffffff;
+          }
+
+        select{
+            outline:none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            background: none transparent;
+            vertical-align: middle;
+            font-size: inherit;
+            color: inherit;
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            background-color: #fff;
+            width: 4rem;
+        }
+        select:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #828c9a;
+        }
+    }
+    // ******************************[register画面]******************************
+    #app {
+        .form-group {
+            input {
+                border-radius: .3rem;
+                height: 2rem;
+                width: calc(100% - 5px);
+                display: inline-block;
+            }
+        }
+        .youbi {
+            text-align: center;
+            input {
+                width: 5%;
+            }
+        }
+        .navbar-nav {
+            padding-left: 40%;
+            list-style: none;
+            a {
+                text-decoration: none;
+                color: black;
+                width: 100%;
+            }
+            .login_wrapper {
+                background-color: white;
+                margin-right: 2px;
+                text-align: center;
+                width: 7rem;
+            }
+            .register_wrapper {
+                background-color: white;
+                text-align: center;
+                width: 7rem;
+            }
+        }
+        .flex_ {
+            display: -webkit-flex;
+            display: flex;
+        }
+        select{
+            outline:none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            background: none transparent;
+            vertical-align: middle;
+            font-size: inherit;
+            color: inherit;
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            background-color: #fff;
+            width: 100%;
+            height: 2rem;
+        }
+        select:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #828c9a;
+        }
+        .send {
+            display       : inline-block;
+            font-size     : 18pt;
+            text-align    : center;
+            cursor        : pointer;
+            padding       : 12px 12px;
+            background    : #007B76;
+            color         : #ffffff;
+            line-height   : 1em;
+            transition    : .3s;
+            box-shadow    : 6px 6px 15px #666666;
+            border        : 2px solid #007B76;
+            width: 100%;
+            margin-top:1rem;
+          }
+          .send:hover {
+            box-shadow    : none;
+            color         : #007B76;
+            background    : #ffffff;
+          }
+    }
+    // ******************************[シフト作成画面]******************************
+    .shift_cleate {
+        .flex_column {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            border-radius: 0.3rem;
+            input {
+                border-radius: 0.3rem;
+                height: 2rem;
+            }
+        }
+        select{
+            outline:none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            background: none transparent;
+            vertical-align: middle;
+            font-size: inherit;
+            color: inherit;
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            background-color: #fff;
+            width: 4rem;
+        }
+        select:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #828c9a;
+        }
+        .calculation_work_time {
+            #button {
+                height: 2rem;
+                width: 5rem;
+                margin-top: 1.5rem;
+                margin-bottom: .5rem;
+                background-color: #007B76;
+            }
+            input {
+                font-size: 1rem;
+                width: 5rem;
+            }
+        }
+        .send {
+            display       : inline-block;
+            font-size     : 18pt;
+            text-align    : center;
+            cursor        : pointer;
+            padding       : 12px 12px;
+            background    : #007B76;
+            color         : #ffffff;
+            line-height   : 1em;
+            transition    : .3s;
+            box-shadow    : 6px 6px 15px #666666;
+            border        : 2px solid #007B76;
+            width: 100%;
+            margin-top:1rem;
+          }
+          .send:hover {
+            box-shadow    : none;
+            color         : #007B76;
+            background    : #ffffff;
+          }
+    }
+    // ******************************[各シフト基本必要人数設定]******************************
+    .default_necessary {
+        .flex_column {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            border-radius: 0.3rem;
+            input {
+                height: 2.6rem;
+            }
+        }
+        select{
+            outline:none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            background: none transparent;
+            vertical-align: middle;
+            font-size: inherit;
+            color: inherit;
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            background-color: #fff;
+            width: 100%;
+        }
+        select:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #828c9a;
+        }
+        .select_necessary {
+            width: 15%;
+        }
+        .send {
+            display       : inline-block;
+            font-size     : 18pt;
+            text-align    : center;
+            cursor        : pointer;
+            padding       : 12px 12px;
+            background    : #007B76;
+            color         : #ffffff;
+            line-height   : 1em;
+            transition    : .3s;
+            box-shadow    : 6px 6px 15px #666666;
+            border        : 2px solid #007B76;
+            width: 100%;
+            margin-top:1rem;
+        }
+        .send:hover {
+            box-shadow    : none;
+            color         : #007B76;
+            background    : #ffffff;
+        }
+        .plus {
+            display       : inline-block;
+            font-size     : 12pt;
+            text-align    : center;
+            cursor        : pointer;
+            padding       : 12px 12px;
+            background    : #007B76;
+            color         : #ffffff;
+            line-height   : 1em;
+            transition    : .3s;
+            box-shadow    : 6px 6px 15px #666666;
+            border        : 2px solid #007B76;
+            width: 25%;
+            margin-top:1rem;
+            text-align: center;
+        }
+        .plus:hover {
+            box-shadow    : none;
+            color         : #007B76;
+            background    : #ffffff;
+        }
+        .del {
+            display       : inline-block;
+            font-size     : 12pt;
+            text-align    : center;
+            cursor        : pointer;
+            padding       : 12px 12px;
+            background    : #dc143c;
+            color         : #ffffff;
+            line-height   : 1em;
+            transition    : .3s;
+            box-shadow    : 6px 6px 15px #666666;
+            border        : 2px solid #dc143c;
+            width: 25%;
+            margin-top:1rem;
+            text-align: center;
+            border-radius: 0;
+        }
+        .del:hover {
+            box-shadow    : none;
+            color         : #dc143c;
+            background    : #ffffff;
+        }
+        .default_necessary_border {
+            border: solid 1px white;
+            margin-bottom: 1rem;
+        }
+    }
+    // ******************************[スタッフ削除]******************************
+    .users_list {
+        table {
+            margin: 0 auto;
+        }
+        td {
+            border: solid 1px;              /* 枠線指定 */
+        }
+        .del {
+            background-color: red;
+            padding: 10px;      /* 余白指定 */
+            input {
+                background-color: transparent;
+                border: none;
+            }
+        }
+        th,td {
+            padding: 10px;      /* 余白指定 */
+        }
+        .user_name {
+            width: 100%;
+        }
+    }
+    // ******************************[繁忙日追加画面]******************************
+    .necessary_staff {
+        .flex_column {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            border-radius: 0.3rem;
+            input {
+                height: 2.6rem;
+            }
+        }
+        select{
+            outline:none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            background: none transparent;
+            vertical-align: middle;
+            font-size: inherit;
+            color: inherit;
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            background-color: #fff;
+            width: 100%;
+            height: 2rem;
+        }
+        .select_necessary select {
+            width: 6rem;
+        }
+        select:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #828c9a;
+        }
+        .send {
+            display       : inline-block;
+            font-size     : 18pt;
+            text-align    : center;
+            cursor        : pointer;
+            padding       : 12px 12px;
+            background    : #007B76;
+            color         : #ffffff;
+            line-height   : 1em;
+            transition    : .3s;
+            box-shadow    : 6px 6px 15px #666666;
+            border        : 2px solid #007B76;
+            width: 100%;
+            margin-top:1rem;
+        }
+        .send:hover {
+            box-shadow    : none;
+            color         : #007B76;
+            background    : #ffffff;
+        }
+    }
+    // ******************************[必要人数検索画面]******************************
+    .necessary_list_search {
+        .flex_column {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            border-radius: 0.3rem;
+            input {
+                height: 2.6rem;
+            }
+        }
+        select{
+            outline:none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            background: none transparent;
+            vertical-align: middle;
+            font-size: inherit;
+            color: inherit;
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            background-color: #fff;
+            width: 100%;
+            height: 2rem;
+        }
+        .select_necessary select {
+            width: 6rem;
+        }
+        select:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #828c9a;
+        }
+        .send {
+            display       : inline-block;
+            font-size     : 18pt;
+            text-align    : center;
+            cursor        : pointer;
+            padding       : 12px 12px;
+            background    : #007B76;
+            color         : #ffffff;
+            line-height   : 1em;
+            transition    : .3s;
+            box-shadow    : 6px 6px 15px #666666;
+            border        : 2px solid #007B76;
+            width: 100%;
+            margin-top:1rem;
+        }
+        .send:hover {
+            box-shadow    : none;
+            color         : #007B76;
+            background    : #ffffff;
+        }
+    }
+}
+// ******************************<SPのレイアウトend>******************************
